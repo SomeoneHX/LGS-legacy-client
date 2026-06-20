@@ -1,0 +1,11 @@
+/* #25 增强页脚超链接 */
+.footer-link {
+  color: #000;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.footer-link:hover {
+  color: #337ab7 !important;
+  text-decoration-color: #000;
+  text-underline-position: under;
+}

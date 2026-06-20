@@ -1,0 +1,415 @@
+/* Font */
+
+@font-face {
+    font-family: "Fira Code";
+    src: url("/static/self/fonts/FiraCode-Regular.woff2") format("woff2"),
+         url("/static/self/fonts/FiraCode-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* semantic ui 优化 */
+
+.ui.menu .ui.container > .item.header {
+    font-size: 1.2em;
+}
+
+.main.container {
+    margin-top: 20px;
+}
+
+* {
+    tab-size: 4;
+}
+
+/* Banner 样式 */
+.banner-container {
+    position: fixed;
+    top: 0;
+    left: 100px;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+}
+
+.top.banner-item {
+    margin: 0 70px;
+}
+
+.banner-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.banner-content {
+    flex: 1;
+    margin-right: 15px;
+}
+
+.banner-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.banner-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 移动端 Banner 样式调整 */
+@media only screen and (max-width: 767px) {
+    .banner-container {
+        left: 0;
+    }
+}
+/*
+
+body.has-banners {
+    padding-top: var(--banner-height, 0);
+}
+
+*/
+
+.rainbow-icon {
+    background: linear-gradient(
+            to right,
+            #ff4b1f,
+            #f2c500,
+            #42b883,
+            #3498db,
+            #9b59b6,
+            #ff4b1f
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbow-move 2s linear infinite;
+}
+
+@keyframes rainbow-move {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: -200% center;
+    }
+}
+
+.ui.left.hover.sidebar.labeled.icon.menu {
+    padding-top: 10px;
+    width: 70px;
+    overflow-x: hidden;
+    white-space: nowrap;
+    transition: width 0.3s ease;
+}
+
+.ui.icon.menu .item i.icon {
+    font-size: 1em;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-top: 3px;
+}
+
+/* ------ By quanac-lcx：31-40行，使侧栏图标下沉、文字上浮，造福强迫症患者 ------ */
+.ui.left.hover.sidebar.labeled.icon.menu .item > span {
+    position: relative;
+    top: -1px;
+}
+
+.ui.left.hover.sidebar.labeled.icon.menu > .item {
+    padding-left: calc(0.8em + 10px) !important;
+    text-align: left !important;
+    color: #555 !important;
+}
+/* -------- End --------*/
+
+.item > i, .item > img {
+    display: inline-block !important;
+}
+
+.ui.left.hover.vertical.sidebar.borderless.labeled.icon.menu.fixed.visible > .item > i {
+    /* 你大坝的，Semantic UI 的 CSS 优先级太高了打不过，只能这么写了 */
+    font-size: 1.5em !important;
+}
+
+
+.accordion-content .item {
+    font-size: 0.95em;
+    margin-left: 0 !important;
+    padding-left: calc(10px + 1em) !important;
+}
+.accordion-content .item:hover {
+    background-color: rgba(0, 0, 0, .05) !important;
+}
+.accordion-title {
+     display: flex;
+     align-items: center;
+     white-space: nowrap;
+}
+
+
+.item > span {
+    color: #2c3e50 !important;
+    margin-left: 8px;
+}
+
+.ui.left.hover.sidebar.labeled.icon.menu > .item > img {
+    margin-left: -5px;
+    /* 不是，我服了爹，好吧，神秘修正。 */
+}
+
+.ui.left.hover.sidebar.labeled.icon.menu > .item > span {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.ui.left.hover.sidebar.labeled.icon.menu > .item {
+    padding-left: 0.8em;
+}
+
+.ui.left.hover.sidebar.labeled.icon.menu:hover {
+    width: 170px;
+}
+
+.ui.left.hover.sidebar.labeled.icon.menu:hover > .item > span {
+    opacity: 1;
+    margin-left: 12px;
+    display: inline;
+}
+
+.ui.icon.colored, .fa.colored, .fas.colored, .fab.colored {
+    color: #667eea;
+}
+
+.ui.header [class^="fa-"],
+.ui.header [class*="fa-"] {
+    margin-right: 0.75rem;
+}
+
+/* card classes */
+
+.card {
+    border-radius: 10px;
+    background: white;
+    padding: 30px;
+    margin-top: 10px;
+}
+
+.card.outline {
+    outline: #dceeff solid 1px;
+}
+
+.card.shadow {
+    box-shadow: 2px 2px 4px #e4e4e4;
+}
+
+.card .card {
+    background: #f8fafc;
+}
+
+.card.propaganda {
+    padding: 0 !important;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    background-color: #f0f2f5;
+}
+
+.card.padding-10 {
+    padding: 10px !important;
+}
+
+.card.padding-15 {
+    padding: 15px !important;
+}
+
+.card.padding-20 {
+    padding: 20px !important;
+}
+
+/* Ads */
+
+.ad-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.ad-slide.active {
+    opacity: 1;
+}
+
+.ad-slide a.propaganda-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.ad-description {
+    position: relative;
+    z-index: 2;
+    padding: 15px 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+    box-sizing: border-box;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+.ad-nav-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    opacity: 0;
+}
+
+.card.propaganda:hover .ad-nav-control {
+    opacity: 1;
+}
+
+.ad-nav-control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.ad-nav-control.prev {
+    left: 15px;
+}
+
+.ad-nav-control.next {
+    right: 15px;
+}
+
+/* Sweet Alert 2 优化 */
+
+img.swal2-image {
+    margin: 0;
+}
+
+/* 信息 */
+
+.meta.gray {
+    color: gray;
+}
+
+.meta.small {
+    font-size: 12px;
+    display: block;
+}
+
+.meta.user {
+    display: flex;
+    align-items: center;
+}
+
+.meta.user > img {
+    border: 2px solid #e2e8f0;
+}
+
+/* Misc */
+
+.firacode {
+    font-family: "Fira Code", "Microsoft YaHei", serif;
+}
+
+.ui.glowing-gold.label {
+    color: white;
+    background: linear-gradient(135deg,
+    rgba(255, 215, 0, 1) 43%,
+    rgba(255, 215, 0, 0.3) 50%,
+    rgba(255, 215, 0, 1) 57%);
+    animation: glowing-background 3s ease-in-out infinite;
+    background-size: 250% 250%;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.ui.glowing-gold.label:hover {
+    color: white;
+    background: linear-gradient(135deg,
+    rgb(245, 208, 0) 43%,
+    rgba(245, 208, 0, 0.3) 50%,
+    rgb(245, 208, 0) 57%);
+    animation: glowing-background 3s ease-in-out infinite;
+    background-size: 250% 250%;
+    box-shadow: 0 0 30px rgba(245, 208, 0, 0.8);
+    transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+@keyframes glowing-background {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+code:not(pre.shiki > code) {
+    font-family: 'Fira Code', 'Microsoft YaHei', serif;
+    background: #f1f5f9 !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    border: 1px solid #e2e8f0 !important;
+    font-size: 0.85em !important;
+    color: #e11d48 !important;
+}
