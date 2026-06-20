@@ -19,6 +19,8 @@ async function pageAbout() {
       <div class="sixteen wide column">
         <div class="card shadow outline">
           <h3 class="ui header">站点简介</h3>
+          <p>本站点是洛谷保存站旧版前端的重开发，将旧版的前端界面连接上新版保存站的API，可以用于怀旧。因为新版保存站采用了前后端分离的模式，且提供了全面的API，因此得以实现本项目。</p>
+          <h3 class="ui header">保存站简介</h3>
           <p>洛谷保存站（Luogu Saver）是一个对洛谷公开内容进行存档的开源项目。本站旨在保存洛谷平台上的专栏文章、剪贴板等内容，防止因源站内容删除或修改而导致信息丢失。</p>
           <h3 class="ui header">数据统计</h3>
           <div class="ui two column stackable grid">
@@ -28,7 +30,9 @@ async function pageAbout() {
           <h3 class="ui header">技术栈</h3>
           <p>jQuery · Semantic UI · KaTeX · Shiki · Font Awesome</p>
           <h3 class="ui header">链接</h3>
-          <p><a href="https://github.com/laikit-dev/luogu-saver" target="_blank" class="footer-link"><i class="fab fa-github"></i> GitHub 仓库</a></p>
+          <p><a href="https://github.com/SomeoneHX/LGS-legacy-client" target="_blank" class="footer-link"><i class="fab fa-github"></i> GitHub 仓库</a></p>
+          <p><a href="https://github.com/laikit-dev/luogu-saver" target="_blank" class="footer-link"><i class="fab fa-github"></i> 旧版保存站 GitHub 仓库</a></p>
+          <p><a href="https://github.com/Ark-Aak/luogu-saver-next" target="_blank" class="footer-link"><i class="fab fa-github"></i> 新版保存站 GitHub 仓库</a></p>
         </div>
       </div>
     </div>`;

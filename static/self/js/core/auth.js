@@ -50,23 +50,22 @@ async function fetchCurrentUser() {
 function updateSidebarAuth(user) {
   const loginItem = document.getElementById('sidebar-login');
   const userItem = document.getElementById('sidebar-user');
-  const logoutItem = document.getElementById('sidebar-logout');
   const adminItem = document.getElementById('sidebar-admin');
   if (user) {
     if (loginItem) loginItem.style.display = 'none';
     if (userItem) {
-      userItem.style.display = 'flex';
+      userItem.style.display = 'block';
       const img = userItem.querySelector('img');
       if (img) img.src = (user.registeredUser?.avatarUrl) || '/static/self/img/default-avatar.svg';
+      const nameSpan = userItem.querySelector('span');
+      if (nameSpan) nameSpan.textContent = '退出登录';
     }
-    if (logoutItem) logoutItem.style.display = 'flex';
     if (adminItem) {
-      adminItem.style.display = (user.role === -1 || user.role & (1 << 5)) ? 'flex' : 'none';
+      adminItem.style.display = (user.role === -1 || user.role & (1 << 5)) ? 'block' : 'none';
     }
   } else {
-    if (loginItem) loginItem.style.display = 'flex';
+    if (loginItem) loginItem.style.display = 'block';
     if (userItem) userItem.style.display = 'none';
-    if (logoutItem) logoutItem.style.display = 'none';
     if (adminItem) adminItem.style.display = 'none';
   }
 }

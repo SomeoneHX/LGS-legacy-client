@@ -48,17 +48,14 @@
     <a class="item" id="sidebar-admin" href="/admin" style="display:none;">
       <i class="ui icon cog"></i> <span>管理后台</span>
     </a>
-    <a class="item" id="sidebar-login" href="javascript:void(0)" onclick="event.stopPropagation();login()" style="position: absolute; bottom: 0; width: 100%;">
+    <div class="sidebar-spacer"></div>
+    <a class="item" id="sidebar-user" href="javascript:void(0)" onclick="event.stopPropagation();logout()" data-no-spa style="display:none;">
+      <img class="ui mini circular image" src="https://cdn.luogu.com.cn/upload/usericon/3.png" alt="usericon">
+      <span></span>
+    </a>
+    <a class="item" id="sidebar-login" href="javascript:void(0)" onclick="event.stopPropagation();login()">
       <i class="ui icon sign-in"></i>
       <span>登录账号</span>
-    </a>
-    <a class="item" id="sidebar-user" href="/settings" style="position: absolute; bottom: 50px; width: 100%; display:none;">
-      <img class="ui mini circular image" src="https://cdn.luogu.com.cn/upload/usericon/3.png" alt="usericon">
-      <span style="top: 2px;"></span>
-    </a>
-    <a class="item" id="sidebar-logout" href="javascript:void(0)" onclick="event.stopPropagation();logout()" data-no-spa style="position: absolute; bottom: 0; width: 100%; display:none;">
-      <i class="ui icon sign-out-alt"></i>
-      <span>退出登录</span>
     </a>
   </div>
   <div class="ui main container" style="min-height: calc(100vh - 20px);">
@@ -113,9 +110,9 @@
             </a>
           </p>
           <p>
-            <a href="https://www.rainyun.com/MjUxMDAy_?s=saver" target="_blank" class="footer-link" style="margin-right: 15px;">
-              <i class="fa fa-server"></i>&nbsp;由 雨云 提供支持
-            </a>
+            <i class="fa fa-balance-scale"></i>
+            本程序基于 <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" class="footer-link">GNU AGPL-3.0</a> 开源 ·
+            修改自 <a href="https://github.com/laikit-dev/luogu-saver" target="_blank" class="footer-link">luogu-saver</a>
           </p>
         </div>
       </div>

@@ -19,7 +19,7 @@ function executeSearch() {
   const resultsContent = document.getElementById('results-content');
   resultsSection.style.display = 'block';
   resultsContent.innerHTML = '<div class="ui active centered inline loader"></div>';
-  navigate('/search?q=' + encodeURIComponent(currentQuery) + '&page=' + currentPage, true);
+  history.replaceState(null, '', '/search?q=' + encodeURIComponent(currentQuery) + '&page=' + currentPage);
   api.get('/search/articles?q=' + encodeURIComponent(currentQuery) + '&page=' + currentPage + '&limit=20')
     .then(function (data) {
       const hits = data.hits || [];

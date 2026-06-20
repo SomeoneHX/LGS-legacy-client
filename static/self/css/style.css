@@ -127,6 +127,9 @@ body.has-banners {
 }
 
 .ui.left.hover.sidebar.labeled.icon.menu {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     padding-top: 10px;
     width: 70px;
     overflow-x: hidden;
@@ -158,6 +161,10 @@ body.has-banners {
     display: inline-block !important;
 }
 
+.sidebar-spacer {
+    flex: 1;
+}
+
 .ui.left.hover.vertical.sidebar.borderless.labeled.icon.menu.fixed.visible > .item > i {
     /* 你大坝的，Semantic UI 的 CSS 优先级太高了打不过，只能这么写了 */
     font-size: 1.5em !important;
@@ -186,7 +193,8 @@ body.has-banners {
 
 .ui.left.hover.sidebar.labeled.icon.menu > .item > img {
     margin-left: -5px;
-    /* 不是，我服了爹，好吧，神秘修正。 */
+    width: 2em;
+    height: 2em;
 }
 
 .ui.left.hover.sidebar.labeled.icon.menu > .item > span {

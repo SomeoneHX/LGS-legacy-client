@@ -23,9 +23,9 @@ async function pageSettings() {
     <div class="ui grid">
       <div class="sixteen wide column">
         <div class="card shadow outline">
-          <h3 class="ui header"><i class="ui icon sign-out-alt colored"></i> 退出登录</h3>
+          <h3 class="ui header"><i class="fas fa-sign-out-alt colored"></i> 退出登录</h3>
           <p style="color:gray;">点击下方按钮清除登录凭据并退出</p>
-          <button id="settings-logout-btn" class="ui red button"><i class="ui icon sign-out-alt"></i> 退出登录</button>
+          <button id="settings-logout-btn" class="ui red button"><i class="fas fa-sign-out-alt"></i> 退出登录</button>
         </div>
       </div>
     </div>`;
@@ -37,7 +37,7 @@ async function pageSettings() {
   });
 
   if (!isLoggedIn()) {
-    document.getElementById('settings-user-info').innerHTML = '<p style="color:gray;text-align:center;padding:30px;">未登录 - <a href="/auth/cp/login" onclick="event.preventDefault();window.location.href=\'/auth/cp/login?redirect=/settings\'">点击登录</a></p>';
+    document.getElementById('settings-user-info').innerHTML = '<p style="color:gray;text-align:center;padding:30px;">未登录 - <a href="javascript:void(0)" onclick="login()">点击登录</a></p>';
     return;
   }
 
@@ -45,7 +45,7 @@ async function pageSettings() {
     const user = await api.get('/auth/me');
     const info = user.registeredUser || user;
     const avatarUrl = user.registeredUser?.avatarUrl || '/static/self/img/default-avatar.svg';
-    document.getElementById('settings-user-info').innerHTML = '<div class="meta user"><img class="ui mini circular image" src="' + avatarUrl + '" alt="avatar"><span style="margin-left:10px;font-weight:550;">UID: ' + (user.uid || info.uid || 'N/A') + '</span></div><p style="margin-top:10px;">角色: ' + (user.role !== undefined ? user.role : 'N/A') + '<br/>注册用户: ' + (info.name || 'N/A') + '</p>';
+    document.getElementById('settings-user-info').innerHTML = '<div class="meta user"><img class="ui mini circular image" src="' + avatarUrl + '" alt="avatar"><span style="margin-left:10px;font-weight:550;">洛谷UID: ' + (info.luoguUid || 'N/A') + '</span></div><p style="margin-top:10px;">权限值: ' + (user.role !== undefined ? user.role : 'N/A') + '<br/>注册用户: ' + (info.name || 'N/A') + '</p>';
   } catch (err) {
     document.getElementById('settings-user-info').innerHTML = '<p style="color:red;">获取用户信息失败: ' + (err.message || '未知错误') + '</p>';
   }
