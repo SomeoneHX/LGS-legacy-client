@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   registerRoute('/', pageHome);
   registerRoute('/article/recent', pageRecent);
+  registerRoute('/plaza', pagePlaza);
   registerRoute('/article/:id', pageArticle);
   registerRoute('/paste/:id', pagePaste);
   registerRoute('/user/:id', pageUser);
