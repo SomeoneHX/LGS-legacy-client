@@ -1,5 +1,7 @@
 function pageLegal() {
-  const path = location.pathname;
+  const base = window.__BASE_PATH__ || '';
+  let path = location.pathname;
+  if (base && path.startsWith(base)) path = path.slice(base.length) || '/';
   const titles = {
     '/legal/privacy': ['fa fa-user-shield', '隐私协议', '最后更新于：2025 年 8 月 20 日'],
     '/legal/disclaimer': ['fa fa-exclamation-circle', '免责声明', '最后更新于：2025 年 8 月 16 日'],

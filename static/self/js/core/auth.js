@@ -37,7 +37,8 @@ function login() {
 
 function logout() {
   localStorage.removeItem('auth_token');
-  location.href = '/';
+  const base = window.__BASE_PATH__ || '';
+  location.href = base + '/';
 }
 
 async function fetchCurrentUser() {
@@ -57,7 +58,7 @@ function updateSidebarAuth(user) {
     if (userItem) {
       userItem.style.display = 'block';
       const img = userItem.querySelector('img');
-      if (img) img.src = (user.registeredUser?.avatarUrl) || '/static/self/img/default-avatar.svg';
+      if (img) img.src = (user.registeredUser?.avatarUrl) || (window.__BASE_PATH__ || '') + '/static/self/img/default-avatar.svg';
       const nameSpan = userItem.querySelector('span');
       if (nameSpan) nameSpan.textContent = '退出登录';
     }

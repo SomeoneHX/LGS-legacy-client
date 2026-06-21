@@ -20,15 +20,17 @@
   </div>
   <script>
     (function () {
+      const basePath = location.pathname.startsWith('/LGS-legacy-client') ? '/LGS-legacy-client' : '';
       const params = new URLSearchParams(location.search);
       const token = params.get('token');
-      const redirect = params.get('redirect') || '/';
+      const rawRedirect = params.get('redirect') || '/';
+      const redirect = rawRedirect.startsWith('/') ? basePath + rawRedirect : rawRedirect;
       if (token) {
         localStorage.setItem('auth_token', token);
         window.location.href = redirect;
       } else {
         const error = params.get('error') || '登录失败，未获取到凭据';
-        document.body.innerHTML = '<div class="card"><h2 style="color:#e74c3c;">登录失败</h2><p>' + error + '</p><a href="/" class="btn">返回主页</a></div>';
+        document.body.innerHTML = '<div class="card"><h2 style="color:#e74c3c;">登录失败</h2><p>' + error + '</p><a href="' + basePath + '/" class="btn">返回主页</a></div>';
       }
     })();
   </script>

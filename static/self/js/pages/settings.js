@@ -44,7 +44,7 @@ async function pageSettings() {
   try {
     const user = await api.get('/auth/me');
     const info = user.registeredUser || user;
-    const avatarUrl = user.registeredUser?.avatarUrl || '/static/self/img/default-avatar.svg';
+    const avatarUrl = user.registeredUser?.avatarUrl || (window.__BASE_PATH__ || '') + '/static/self/img/default-avatar.svg';
     document.getElementById('settings-user-info').innerHTML = '<div class="meta user"><img class="ui mini circular image" src="' + avatarUrl + '" alt="avatar"><span style="margin-left:10px;font-weight:550;">洛谷UID: ' + (info.luoguUid || 'N/A') + '</span></div><p style="margin-top:10px;">权限值: ' + (user.role !== undefined ? user.role : 'N/A') + '<br/>注册用户: ' + (info.name || 'N/A') + '</p>';
   } catch (err) {
     document.getElementById('settings-user-info').innerHTML = '<p style="color:red;">获取用户信息失败: ' + (err.message || '未知错误') + '</p>';
