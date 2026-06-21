@@ -20,8 +20,8 @@ async function pageToken() {
       <div class="sixteen wide column">
         <div class="card shadow">
           <h1 class="ui center aligned header">
-            <span><i class="ui icon key colored"></i> Token 申请</span>
-            <div class="sub header" style="margin-top:10px;">获取在洛谷保存站的唯一身份凭据</div>
+            <span><i class="ui search icon colored"></i> Token 申请</span>
+            <div class="sub header" style="margin-top:10px;">获取在洛谷保存站的唯一识别凭据</div>
           </h1>
         </div>
       </div>
