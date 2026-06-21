@@ -30,6 +30,7 @@ function login() {
     if (result.value) {
       updateSidebarAuth(result.value);
       Swal.fire({ icon: 'success', title: '登录成功', timer: 1500, showConfirmButton: false });
+      navigate(window.location.pathname);
     }
   });
 }
