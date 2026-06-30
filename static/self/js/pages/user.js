@@ -15,18 +15,18 @@ async function pageUser(params) {
                 <span class="meta gray small">用户信息</span>
                 <div class="meta user" style="margin-top: 5px;">
                   <img class="ui mini circular image" id="user-avatar" src="https://cdn.luogu.com.cn/upload/usericon/3.png" alt="user_icon">
-                  <a id="user-link" href="javascript:void(0)" style="margin-left: 5px; font-weight: 550;"></a>
+                  <a id="user-link"  style="margin-left: 5px; font-weight: 550;"></a>
                 </div>
               </div>
             </div>
             <div class="sixteen wide column">
-              <a href="javascript:void(0)" id="user-original-link" class="ui button" style="display:none;">
+              <a  id="user-original-link" class="ui button" style="display:none;">
                 <i class="ui icon share square"></i> 查看原主页
               </a>
-              <a href="javascript:void(0)" onclick="copyMarkdown()" class="ui button" id="user-copy-btn" style="display:none;">
+              <a  onclick="copyMarkdown()" class="ui button" id="user-copy-btn" style="display:none;">
                 <i class="ui icon copy"></i> 复制原文
               </a>
-              <a href="javascript:void(0)" id="save-btn" class="ui positive button">
+              <a  id="save-btn" class="ui positive button">
                 <i class="ui icon sync alternate"></i> 更新资料
               </a>
             </div>

@@ -37,7 +37,7 @@ async function pageSettings() {
   });
 
   if (!isLoggedIn()) {
-    document.getElementById('settings-user-info').innerHTML = '<p style="color:gray;text-align:center;padding:30px;">未登录 - <a href="javascript:void(0)" onclick="login()">点击登录</a></p>';
+    document.getElementById('settings-user-info').innerHTML = '<p style="color:gray;text-align:center;padding:30px;">未登录 - <a  onclick="login()">点击登录</a></p>';
     return;
   }
 
