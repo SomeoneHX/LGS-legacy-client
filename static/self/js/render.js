@@ -99,8 +99,8 @@ async function renderAll() {
 		if (loader) loader.classList.remove("active");
 		const content = document.getElementById("render-content");
 		const container = document.getElementById("render-container");
-		content.style.display = "block";
-		container.style.minHeight = "auto";
+		if (content) content.style.display = "block";
+		if (container) container.style.minHeight = "auto";
 		$(content).transition('fade in');
 	}
 }
